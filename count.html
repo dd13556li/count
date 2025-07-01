@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數一數小遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <div id="start-overlay" class="overlay">
+        <div class="overlay-content">
+            <h2>1. 請選擇數數方式</h2>
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="ai">AI 幫你數</button>
+                <button class="mode-btn" data-mode="user">我自己數</button>
+            </div>
+            <h2>2. 請選擇難度開始遊戲</h2>
+            <div class="difficulty-selector">
+                <button class="difficulty-btn" data-difficulty="easy">簡單1-5</button>
+                <button class="difficulty-btn" data-difficulty="medium">普通1-10</button>
+                <button class="difficulty-btn" data-difficulty="hard">困難1-15</button>
+                <button class="difficulty-btn" data-difficulty="extreme">極難1-20</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="final-score-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2>遊戲結束！</h2>
+            <p>你的總分是：</p>
+            <p id="final-score" class="final-score-text">0</p>
+            <button id="play-again-btn" class="start-game-btn">再玩一次</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <h1>數一數，有幾個？ (<span id="turn-counter">0</span> / 10)</h1>
+        
+        <div class="score-board">
+            分數：<span id="score">0</span>
+        </div>
+
+        <div id="item-area" class="item-area"></div>
+
+        <div id="options-area" class="options-area"></div>
+
+        <p id="feedback-message" class="feedback-message"></p>
+
+    </div>
+
+    <audio id="success-sound" src="sounds/success.mp3" preload="auto"></audio>
+    <audio id="correct-sound" src="sounds/correct.mp3" preload="auto"></audio>
+    <audio id="error-sound" src="sounds/error.mp3" preload="auto"></audio>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
